@@ -1,0 +1,80 @@
+<%- include("./partials/header.ejs") %>
+<% if(locals.content){ %>
+
+<body class="">  
+<div class="container glowing">
+  <div class=" body-background p-3 m-3">
+    <div class="d-flex justify-content-start mt-2 head-nav"> 
+      <!-- search bar -->
+       
+      <form action="/current" method="get">
+        <input type="text" placeholder="City" id="city" name="city" required>
+        <!-- <input type="search" required> -->
+          <i class="fa fa-search" type="submit">
+                                                                         <!-- need button -->
+          </i> 
+        <!-- <input id="submit" type="submit" class="btn btn-primary" value="Search"> -->
+      </form>
+      <p class="day"><%= content.day%></p>
+    
+    </div>
+  <div class="grid-parent align-items-center">
+      <!-- image presentation of weather -->
+      <div class=" item1 text-center">
+        <img src="<%= content.semiForecast %>" class="img-container"></img>
+        
+      </div>        
+
+      <!-- CITY -->
+  <div class="name-content item2 d-flex justify-content-center">
+    <h3 class="center">
+      <%= content.name %>, <%= content.sys %>
+    </h3>
+  </div>
+
+  <!-- Weather forecast -->
+  <div class="mainForecast item3">
+    <p class="text-center font-serif">
+      <%= content.mainForecast %>
+    </p> 
+  </div>
+
+  <!-- temperature, humidity -->
+  <div class="temperature item4 d-flex align-items-center justify-content-center">
+    <p class="temp">
+      <%= content.temperature %>   
+    </p>
+    <div class="d-flex flex-column">
+      <p class="celsius">
+        <img src="img/thermometer-1829.png" width="20" height="20">
+         Celsius </p>
+      <p>
+        <img src="img/cooling-symbol-3340.png" width="16" height="16">
+        <%= content.humidity %> mph
+      </p>
+    </div>
+
+    
+  </div>
+  <div class="description item5">
+    <p class="text-center">
+      <%= content.description %>
+    </p>
+  </div>
+  <div class="item7">
+    
+  </div>
+  <div class="text-center font-extralight text-sm item6">
+    <p>
+      <%= content.date %>
+    </p>
+  </div>
+  
+  <% } %>
+  </div>
+</div>
+  </div>
+
+  
+</body>
+</html>

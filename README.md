@@ -1,4 +1,5 @@
 WeatherMyLocation is a web app to forecast the weather in your area.
+(on-going)
 
 Installation
 1. After cloning the repo
